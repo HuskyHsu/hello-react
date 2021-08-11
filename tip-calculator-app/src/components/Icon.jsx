@@ -1,4 +1,6 @@
 import { ReactComponent as Logo } from "../images/logo.svg";
-export const Icon = { Logo };
+import { ReactComponent as Dollar } from "../images/icon-dollar.svg";
+import { ReactComponent as Person } from "../images/icon-person.svg";
+export const Icon = { Logo, Dollar, Person };
 
 export default Icon;
