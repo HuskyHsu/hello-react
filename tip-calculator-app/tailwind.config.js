@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         DEFAULT: "hsl(172, 67%, 45%)",
         "text-dark": "hsl(186, 14%, 43%)",
+        "text-light": "hsl(180, 18%, 40%)",
         light: "hsl(185, 41%, 84%)",
         darkest: "hsl(183, 100%, 15%)",
         lightest: "hsl(189, 41%, 97%)",

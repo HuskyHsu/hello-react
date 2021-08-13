@@ -1,4 +1,4 @@
-import React, { cloneElement, Children } from "react";
+import React, { cloneElement, Children, useRef } from "react";
 import { Icon } from "./components";
 import clsx from "clsx";
 
@@ -28,7 +28,7 @@ function TextField({ id, label, icon }) {
           id={id}
           type="number"
         />
-        {cloneElement(icon, { className: "h-4 w-4 absolute m-4" })}
+        {icon && cloneElement(icon, { className: "h-4 w-4 absolute m-4" })}
       </div>
     </div>
   );
@@ -45,7 +45,11 @@ function RadioGroup({ name, label, children }) {
   );
 }
 
-function Radio({ value, label, name }) {
+function Radio({ value, label, name, custom }) {
+  const ref = useRef(null);
+  function onFocus() {
+    ref.current?.focus();
+  }
   return (
     <div>
       <input
@@ -54,17 +58,33 @@ function Radio({ value, label, name }) {
         id={value}
         value={value}
         className="sr-only peer"
+        onChange={custom && onFocus}
       />
       <label
         htmlFor={value}
         className={clsx(
-          "block bg-darkest py-4 w-full rounded-md",
-          "text-center text-white text-xl font-bold",
-          "peer-checked:bg-light peer-checked:text-darkest"
+          "block py-4 w-full rounded-md",
+          "text-center text-xl font-bold",
+          custom ? "bg-lightest text-text-light" : "bg-darkest text-white",
+          custom
+            ? "peer-checked:hidden"
+            : "peer-checked:bg-light peer-checked:text-darkest"
         )}
       >
         {label}
       </label>
+
+      {custom && (
+        <div className="peer-checked:flex rounded-md hidden">
+          <div className="flex items-center">
+            <input
+              className="w-full p-4 bg-lightest text-right text-xl font-bold text-darkest"
+              type="number"
+              ref={ref}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -86,7 +106,7 @@ function App() {
             <Radio value="15" label="15%" />
             <Radio value="25" label="25%" />
             <Radio value="50" label="50%" />
-            <Radio value="custom" label="Custom" />
+            <Radio value="custom" label="Custom" custom />
           </RadioGroup>
 
           {/* number of people */}
