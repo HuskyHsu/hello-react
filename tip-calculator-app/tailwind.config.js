@@ -12,6 +12,7 @@ module.exports = {
         darkest: "hsl(183, 100%, 15%)",
         lightest: "hsl(189, 41%, 97%)",
         light: "hsl(172, 67%, 45%)",
+        label: "hsl(184, 14%, 56%)",
       },
       fontFamily: {
         spaceMono: ["Space Mono", "monospace", "sans-serif"],

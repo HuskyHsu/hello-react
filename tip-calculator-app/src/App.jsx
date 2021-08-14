@@ -89,33 +89,56 @@ function Radio({ value, label, name, custom }) {
   );
 }
 
+function DataField({ title, note, value }) {
+  return (
+    <div className="flex items-center justify-between">
+      <div className="flex flex-col">
+        <strong className="text-white text-lg">{title}</strong>
+        <span className="text-label text-sm">{note}</span>
+      </div>
+      <p className="text-light text-3xl font-bold">{value}</p>
+    </div>
+  );
+}
+
 function App() {
   return (
     <main className="">
-      {/* header */}
       <Header />
       <main>
         <Card className="bg-white rounded-3xl">
-          <form>
+          <form className="flex flex-col gap-4">
             <TextField id="bill" label="Bill" icon={<Icon.Dollar />} />
-          </form>
-          {/* select tip */}
-          <RadioGroup name="tips" label="Select Tip %">
-            <Radio value="5" label="5%" />
-            <Radio value="10" label="10%" />
-            <Radio value="15" label="15%" />
-            <Radio value="25" label="25%" />
-            <Radio value="50" label="50%" />
-            <Radio value="custom" label="Custom" custom />
-          </RadioGroup>
 
-          {/* number of people */}
-          <TextField
-            id="people"
-            label="Number of People"
-            icon={<Icon.Person />}
-          />
-          {/* result */}
+            <RadioGroup name="tips" label="Select Tip %">
+              <Radio value="5" label="5%" />
+              <Radio value="10" label="10%" />
+              <Radio value="15" label="15%" />
+              <Radio value="25" label="25%" />
+              <Radio value="50" label="50%" />
+              <Radio value="custom" label="Custom" custom />
+            </RadioGroup>
+
+            <TextField
+              id="people"
+              label="Number of People"
+              icon={<Icon.Person />}
+            />
+
+            <Card className="bg-darkest rounded-xl space-y-6">
+              <div className="space-y-4">
+                <DataField title="Tip Amount" note="/ persion" value="$4.27" />
+                <DataField title="Total" note="/ persion" value="$32.79" />
+              </div>
+
+              <button
+                type="reset"
+                className="bg-light w-full h-12 text-xl font-bold text-darkest rounded-md"
+              >
+                RESET
+              </button>
+            </Card>
+          </form>
         </Card>
       </main>
     </main>
