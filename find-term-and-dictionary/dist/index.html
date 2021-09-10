@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Find Term and Dictionary</title>
+  <link rel='stylesheet' href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main class="
+    flex flex-col
+    justify-center
+    w-screen
+    max-w-3xl
+    mx-auto
+    space-y-6
+    h-screen
+  ">
+  <h4 class="text-2xl font-black">Find Term and Dictionary</h4>
+  <div class="relative flex w-full rounded-2xl shadow-xl">
+    <span class="absolute top-3 left-3"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6087 0C4.7591 0 0 4.74609 0 10.5797C0 16.4133 4.75915 21.1594 10.6087 21.1594C13.2162 21.1594 15.6071 20.2163 17.4563 18.6542L22.575 23.747C22.7449 23.9157 22.9664 24 23.1884 24C23.4118 24 23.635 23.9145 23.8049 23.7438C24.1435 23.4032 24.142 22.8527 23.8017 22.5139L18.6893 17.4274C20.2652 15.5807 21.2174 13.189 21.2174 10.5797C21.2174 4.74609 16.4582 0 10.6087 0ZM16.9346 16.7705C18.5071 15.1744 19.4782 12.9879 19.4782 10.5797C19.4782 5.70488 15.4994 1.73908 10.6087 1.73908C5.71794 1.73908 1.73913 5.70488 1.73913 10.5797C1.73913 15.4542 5.71794 19.4203 10.6087 19.4203C13.0163 19.4203 15.2029 18.4591 16.8027 16.9016C16.8211 16.879 16.8407 16.8571 16.8617 16.836C16.885 16.8125 16.9094 16.7907 16.9346 16.7705Z" fill="#0079FF" />
+      </svg>
+    </span>
+    <input class="
+        w-full
+        h-12
+        pl-12
+        rounded-2xl
+        outline-none
+        text-black text-opacity-70
+      " type="text" placeholder="Search the term in article" id="search_text" />
+  </div>
+  <section id="article" class="bg-white text-black text-opacity-70 rounded-2xl shadow-xl p-8">
+    <p>
+      An hour later he sighted the first shark. It was a fierce Mako, and it
+      came in fast to slash with raking teethat the dead marlin. With failing
+      might the old man struck the shark with his harpoon. The Mako rolled and
+      sank, carrying the harpoon with it and leaving the marlin mutilated and
+      bloody.
+    </p>
+    <p>
+      When the third appeared, he thrust at it with the knife, only to feel the
+      blade snap as the fish rolled.
+    </p>
+    <p>
+      But the old man thought only of his steering and his great tiredness. He
+      had gone out too far and the sharks had beaten him. He knew they would
+      leave him nothing but the stripped skeleton of his great catch.
+    </p>
+    <p>
+      「 Fish,」 he said softly, aloud, 「 I'll stay with you until I am dead.」
+    </p>
+  </section>
+  <section id="dictionary" class="p-8 w-96 bg-blue-800 text-white space-y-3 rounded-xl absolute hidden">
+    <header id="word" class="text-2xl font-bold mt-0">husky
+    </header>
+    <article id="phonetic" class="text-xs">/ˈhʌski/</article>
+    <div class="flex justify-between">
+      <div>meanings</div>
+      <div class="flex items-center">
+        <span id="close" class="absolute top-2 right-4 cursor-pointer text-xl">✕</span>
+        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+          <path d="M0.499999 7.36602C-0.166667 6.98112 -0.166667 6.01887 0.5 5.63397L8.75 0.870834C9.41667 0.485934 10.25 0.96706 10.25 1.73686V11.2631C10.25 12.0329 9.41667 12.5141 8.75 12.1292L0.499999 7.36602Z" fill="#222731" />
+        </svg>
+        <span class="w-8 text-center" id="meaningId">1</span>
+        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+          <path d="M10.5 5.63398C11.1667 6.01888 11.1667 6.98113 10.5 7.36603L2.25 12.1292C1.58333 12.5141 0.75 12.0329 0.75 11.2631V1.73686C0.75 0.967059 1.58333 0.485935 2.25 0.870835L10.5 5.63398Z" fill="#222731" />
+        </svg>
+      </div>
+    </div>
+    <article class="space-y-2 text-xs">
+      <span id="partOfSpeech">adjective</span>
+      <p id="definition">
+        (of a voice or utterance) sounding low-pitched and slightly hoarse.
+      </p>
+      <p id="example">his voice became a husky, erotic whisper</p>
+    </article>
+  </section>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
